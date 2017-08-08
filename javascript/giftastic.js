@@ -9,20 +9,8 @@ function generateButtons(){
 		b.text(gifs[j]);
 		$("#buttonsDisplay").append(b);
 	}
-}
 
-generateButtons();
 
-$("#addGifButton").on("click", function(event) {
-	event.preventDefault();
-	$("#buttonsDisplay").empty();
-	var gifResponse = $("#gInput").val().trim();
-	var userInput = gifResponse.replace(/ /g, "+");
-	gifs.push(userInput);
-	console.log(gifs);
-	generateButtons();
-	// $("#gifsDisplay").push(gifs);
-});
 
 $(".gif").on("click", function(event) {
 
@@ -70,5 +58,19 @@ $(".gif").on("click", function(event) {
 	
 });
 
+}
+
+generateButtons();
+
+$("#addGifButton").on("click", function(event) {
+	event.preventDefault();
+	$("#buttonsDisplay").empty();
+	var gifResponse = $("#gInput").val().trim();
+	var userInput = gifResponse.replace(/ /g, "+");
+	gifs.push(userInput);
+	console.log(gifs);
+	generateButtons();
+	// $("#gifsDisplay").push(gifs);
+});
 
 
